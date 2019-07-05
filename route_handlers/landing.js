@@ -1,9 +1,7 @@
+let path = require('path')
 
-exports.get_landing = function(req, res, next) {
-  res.render('landing', { title: 'Express' });
+
+exports.homepage = function(req, res, next) {
+  res.sendFile(path.join(__dirname, '../public','html' ,'home.html'));
 }
 
-exports.submit_lead = function(req, res, next) {
-  console.log("Lead email: ", req.body.lead_email);
-  res.redirect('/')
-}
